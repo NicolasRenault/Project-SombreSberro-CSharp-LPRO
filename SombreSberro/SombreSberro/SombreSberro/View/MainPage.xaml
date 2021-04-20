@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="CarousselPageName"
+             xmlns:local="clr-namespace:SombreSberro"
+             x:Class="SombreSberro.MainPage"
+              CurrentPageChanged="CarousselPageName_CurrentPageChanged">
+   
+    <!-- Calendar -->
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Calendrier" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <DatePicker x:Name="datePickerAppointment" DateSelected="datePickerAppointment_DateSelected" Format="yyyy/mm/dd"/>
+            <Label x:Name="testDatePicker"/>
+            <ListView x:Name="listRDVPatient" RowHeight="120" ItemSelected="listRDVPatient_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5" RowSpacing="0" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                                    <Label x:Name="patientIdentity" Text="{Binding patient.nom}" TextColor="{Binding isUrgence}"/>
+                                    <Label x:Name="patientAppoitmentDate" Text="{Binding dateRendezVous}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Row="1">
+                                    <Label Text="Is accepted : "/>
+                                    <Label x:Name="isAcceptedAppointment" Text="{Binding isAccepted}"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="2">
+                                    <Label x:Name="libelleAppointment" Text="{Binding libelle}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Row="3">
+                                    <Button x:Name="accpetConsultationDetails" Text="Accepter"/>
+                                    <Button x:Name="endAppointmentDetails" Text="End of consulation"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    
+    <!-- Patient -->
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Liste de patient" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="EntryPatient"
+                   TextChanged="EntryPatient_TextChanged"/>
+
+
+            <ListView x:Name="listPatient"
+                      ItemSelected="ListPatient_ItemSelected"
+                      RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5" RowSpacing="8" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding nom}"
+                                   FontAttributes="Bold"/>
+
+                                <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding prenom}"/>
+
+                                <Label Grid.Row="1" Grid.Column="2"
+                                   Text="{Binding dateNaissance}"/>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage>
+
+    <!-- Calculatrice -->
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Calculatrice" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <Grid  VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand">
+
+                <Button x:Name="CalculatorButtonRVC"
+                    Text="RVC"
+                    Clicked="CalculatorButtonRVC_Clicked"
+                    Grid.Row="0"/>
+
+                <Button x:Name="CalculatorButtonIMC"
+                    Text="IMC"
+                    Clicked="CalculatorButtonIMC_Clicked"
+                    Grid.Row="1"/>
+
+                <Button x:Name="CalculatorButtonGrocesse"
+                    Text="Grocesse"
+                    Clicked="CalculatorButtonGrocesse_Clicked"
+                    Grid.Row="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage>
+
+    <!-- Notepad -->
+    <ContentPage LayoutChanged="Notepad_Appearing"
+             Unfocused="Notepad_Disappearing">
+        <StackLayout>
+            <StackLayout>
+                <StackLayout x:Name="LabelStackNotepad"
+                         VerticalOptions="StartAndExpand" 
+                         HorizontalOptions="CenterAndExpand">
+                    <Label Text="Bloc Note"
+                       FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout x:Name="EditorStackNotepad"
+                         VerticalOptions="FillAndExpand">
+                    <Editor x:Name="Editor_Notpad"
+                        AutoSize="TextChanges"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+</CarouselPage>

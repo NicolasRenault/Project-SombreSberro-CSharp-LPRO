@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SombreSberro.View.ListPatient">
+    <ContentPage Title ="Liste Patient">
+        <StackLayout>
+            <Entry x:Name="EntryPatient"
+                   TextChanged="EntryPatient_TextChanged"/> 
+
+
+            <ListView x:Name="listPatient"
+                      ItemSelected="ListPatient_ItemSelected"
+                      RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5" RowSpacing="8" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding nom}"
+                                   FontAttributes="Bold"/>
+
+                                <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding prenom}"/>
+
+                                <Label Grid.Row="1" Grid.Column="2"
+                                   Text="{Binding dateNaissance}"/>
+                                
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SombreSberro.View.IMCView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Label x:Name="LabelIMCHeight"
+                            Text="Taille (en cm) :"
+                            Grid.Column="1"
+                            Grid.Row="0"/>
+
+                <Entry x:Name="EntryIMCHeight"
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            TextChanged="Entry_Digit"/>
+
+                <Label x:Name="LabelIMCWeight"
+                            Text="Poid (en kg) :"
+                            Grid.Column="1"
+                            Grid.Row="1"/>
+
+                <Entry x:Name="EntryIMCWeight"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            TextChanged="Entry_Digit"/>
+
+                <Button x:Name="Validate_IMC"
+                        Text="Valider"
+                        Grid.Column="3"
+                        Grid.Row="2"
+                        Clicked="Validate_IMC_Clicked"/>
+                
+            </Grid>
+
+            <Label x:Name="LabelResultIMC"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="100"/>
+
+            <Label x:Name="LabelResultIMCText"
+                   Text="Idince de masse corporel"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Default"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

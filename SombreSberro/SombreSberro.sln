@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1340
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SombreSberro.Android", "SombreSberro\SombreSberro.Android\SombreSberro.Android.csproj", "{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SombreSberro", "SombreSberro\SombreSberro\SombreSberro.csproj", "{409DD434-CF0E-43CE-BE16-A90E7691AFD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06ED7CC9-B323-4C5A-BBC0-3991065AFFB9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{409DD434-CF0E-43CE-BE16-A90E7691AFD7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {432CFF63-6903-4738-A417-82F4D2AE4FDB}
+	EndGlobalSection
+EndGlobal
